@@ -6,16 +6,16 @@ class App extends Component {
   }
   
   componentDidMount() {
-    fetch(`http://localhost:5500/api/v1/lrtlive`)
+    fetch(`https://stormy-cliffs-59195.herokuapp.com/api/v1/lrtlive`)
     .then(res => res.json())
-    .then((data) => {
+    .then(data => {
       this.setState({ LRT: data.tvprog.items })
     })
   }
 
   render() {
     return (
-       <div className='container'>
+      <div className='container'>
         <div className='col-xs-12'>
         <h1 className='tc'>LRT</h1>
         {this.state.LRT.map((LRT, i) => (
@@ -28,7 +28,7 @@ class App extends Component {
           </div>
         ))}
         </div>
-       </div>
+      </div>
     )
   }
 }
